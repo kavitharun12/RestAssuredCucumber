@@ -1,0 +1,3 @@
+11:51:01.482 [main] INFO  c.e.c.CucumberSpringConfiguration - Starting CucumberSpringConfiguration using Java 21.0.7 with PID 15864 (started by Kavitha in C:\Users\Kavitha\workspace\Aug1_Regression)
+11:51:01.486 [main] INFO  c.e.c.CucumberSpringConfiguration - No active profile set, falling back to 1 default profile: "default"
+11:51:02.572 [main] INFO  c.e.c.CucumberSpringConfiguration - Started CucumberSpringConfiguration in 1.417 seconds (process running for 4.245)

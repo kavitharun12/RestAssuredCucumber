@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="3.743" tests="5" skipped="0" failures="5" errors="0">
+<testcase classname="Product API Testing" name="Create a new product" time="0.035">
+<failure/>
+<system-out><![CDATA[
+Given the API is running at http://localhost:8080...........................undefined
+Given I have a product with following details:..............................skipped
+When I send POST request to "/api/products".................................skipped
+Then the response status code should be 201.................................skipped
+And the response should contain the product details.........................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Product API Testing" name="Get all products" time="0.002">
+<failure/>
+<system-out><![CDATA[
+Given the API is running at http://localhost:8080...........................undefined
+When I send GET request to "/api/products"..................................skipped
+Then the response status code should be 200.................................skipped
+And the response should contain a list of products..........................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Product API Testing" name="Get a specific product" time="0.016">
+<failure/>
+<system-out><![CDATA[
+Given the API is running at http://localhost:8080...........................undefined
+Given I have a product with following details:..............................skipped
+When I send POST request to "/api/products".................................skipped
+And I send GET request to "/api/products/1".................................skipped
+Then the response status code should be 200.................................skipped
+And the response should contain the product details.........................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Product API Testing" name="Update a product" time="0.006">
+<failure/>
+<system-out><![CDATA[
+Given the API is running at http://localhost:8080...........................undefined
+Given I have a product with following details:..............................skipped
+When I send POST request to "/api/products".................................skipped
+And I have a product with following details:................................skipped
+And I send PUT request to "/api/products/1".................................skipped
+Then the response status code should be 200.................................skipped
+And the response should contain the product details.........................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Product API Testing" name="Delete a product" time="0.009">
+<failure/>
+<system-out><![CDATA[
+Given the API is running at http://localhost:8080...........................undefined
+Given I have a product with following details:..............................skipped
+When I send POST request to "/api/products".................................skipped
+And I send DELETE request to "/api/products/1"..............................skipped
+Then the response status code should be 204.................................skipped
+And the product should not exist............................................skipped
+]]></system-out>
+</testcase>
+</testsuite>
