@@ -1,3 +1,43 @@
-11:51:01.482 [main] INFO  c.e.c.CucumberSpringConfiguration - Starting CucumberSpringConfiguration using Java 21.0.7 with PID 15864 (started by Kavitha in C:\Users\Kavitha\workspace\Aug1_Regression)
-11:51:01.486 [main] INFO  c.e.c.CucumberSpringConfiguration - No active profile set, falling back to 1 default profile: "default"
-11:51:02.572 [main] INFO  c.e.c.CucumberSpringConfiguration - Started CucumberSpringConfiguration in 1.417 seconds (process running for 4.245)
+05:13:47.173 [main] INFO  c.e.c.CucumberSpringConfiguration - Starting CucumberSpringConfiguration using Java 21.0.7 with PID 17344 (started by Kavitha in C:\Users\Kavitha\workspace\Aug1_Regression)
+05:13:47.178 [main] INFO  c.e.c.CucumberSpringConfiguration - No active profile set, falling back to 1 default profile: "default"
+05:13:48.044 [main] INFO  c.e.c.CucumberSpringConfiguration - Started CucumberSpringConfiguration in 1.168 seconds (process running for 3.772)
+05:13:48.912 [main] INFO  com.example.steps.ProductSteps - Checking if API is running at http://localhost:8080
+05:13:49.929 [main] INFO  com.example.steps.ProductSteps - Health check response status: 200
+05:13:49.936 [main] INFO  com.example.steps.ProductSteps - Created test product: Product(id=null, name=Gaming Laptop, description=High-performance laptop, price=1299.99)
+05:13:49.942 [main] INFO  com.example.steps.ProductSteps - Sending POST request to /api/products with body: Product(id=null, name=Gaming Laptop, description=High-performance laptop, price=1299.99)
+05:13:50.315 [main] INFO  com.example.steps.ProductSteps - Received response with status code: 201
+05:13:50.384 [main] INFO  com.example.steps.ProductSteps - Verifying status code. Expected: 201, Actual: 201
+05:13:50.387 [main] INFO  com.example.steps.ProductSteps - Verifying product details. Response product: Product(id=17, name=Gaming Laptop, description=High-performance laptop, price=1299.99)
+05:13:50.425 [main] INFO  com.example.steps.ProductSteps - Checking if API is running at http://localhost:8080
+05:13:50.457 [main] INFO  com.example.steps.ProductSteps - Health check response status: 200
+05:13:50.458 [main] INFO  com.example.steps.ProductSteps - Sending GET request to /api/products
+05:13:50.496 [main] INFO  com.example.steps.ProductSteps - Received response with status code: 200
+05:13:50.497 [main] INFO  com.example.steps.ProductSteps - Verifying status code. Expected: 200, Actual: 200
+05:13:50.711 [main] INFO  com.example.steps.ProductSteps - Retrieved 14 products from response
+05:13:50.732 [main] INFO  com.example.steps.ProductSteps - Checking if API is running at http://localhost:8080
+05:13:50.773 [main] INFO  com.example.steps.ProductSteps - Health check response status: 200
+05:13:50.775 [main] INFO  com.example.steps.ProductSteps - Created test product: Product(id=null, name=Test Product, description=Test Description, price=99.99)
+05:13:50.778 [main] INFO  com.example.steps.ProductSteps - Sending POST request to /api/products with body: Product(id=null, name=Test Product, description=Test Description, price=99.99)
+05:13:50.812 [main] INFO  com.example.steps.ProductSteps - Received response with status code: 201
+05:13:50.816 [main] INFO  com.example.steps.ProductSteps - Sending GET request to /api/products/18
+05:13:50.838 [main] INFO  com.example.steps.ProductSteps - Received response with status code: 200
+05:13:50.839 [main] INFO  com.example.steps.ProductSteps - Verifying status code. Expected: 200, Actual: 200
+05:13:50.842 [main] INFO  com.example.steps.ProductSteps - Verifying product details. Response product: Product(id=18, name=Test Product, description=Test Description, price=99.99)
+05:13:50.866 [main] INFO  com.example.steps.ProductSteps - Checking if API is running at http://localhost:8080
+05:13:50.902 [main] INFO  com.example.steps.ProductSteps - Health check response status: 200
+05:13:50.903 [main] INFO  com.example.steps.ProductSteps - Created test product: Product(id=null, name=Initial Product, description=Initial Description, price=99.99)
+05:13:50.904 [main] INFO  com.example.steps.ProductSteps - Sending POST request to /api/products with body: Product(id=null, name=Initial Product, description=Initial Description, price=99.99)
+05:13:50.935 [main] INFO  com.example.steps.ProductSteps - Received response with status code: 201
+05:13:50.938 [main] INFO  com.example.steps.ProductSteps - Created test product: Product(id=19, name=Updated Product, description=Updated Description, price=149.99)
+05:13:50.939 [main] INFO  com.example.steps.ProductSteps - Sending PUT request to /api/products/19 with body: Product(id=19, name=Updated Product, description=Updated Description, price=149.99)
+05:13:50.978 [main] INFO  com.example.steps.ProductSteps - Received response with status code: 200
+05:13:50.979 [main] INFO  com.example.steps.ProductSteps - Verifying status code. Expected: 200, Actual: 200
+05:13:50.981 [main] INFO  com.example.steps.ProductSteps - Verifying product details. Response product: Product(id=19, name=Updated Product, description=Updated Description, price=149.99)
+05:13:51.006 [main] INFO  com.example.steps.ProductSteps - Checking if API is running at http://localhost:8080
+05:13:51.043 [main] INFO  com.example.steps.ProductSteps - Health check response status: 200
+05:13:51.045 [main] INFO  com.example.steps.ProductSteps - Created test product: Product(id=null, name=Delete Product, description=To be deleted, price=49.99)
+05:13:51.046 [main] INFO  com.example.steps.ProductSteps - Sending POST request to /api/products with body: Product(id=null, name=Delete Product, description=To be deleted, price=49.99)
+05:13:51.077 [main] INFO  com.example.steps.ProductSteps - Received response with status code: 201
+05:13:51.080 [main] INFO  com.example.steps.ProductSteps - Sending DELETE request to /api/products/20
+05:13:51.104 [main] INFO  com.example.steps.ProductSteps - Received response with status code: 204
+05:13:51.106 [main] INFO  com.example.steps.ProductSteps - Verifying status code. Expected: 204, Actual: 204

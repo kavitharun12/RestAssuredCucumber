@@ -27,7 +27,7 @@ Feature: Product API Testing
       | name           | description                | price  |
       | Test Product   | Test Description          | 99.99  |
     When I send POST request to "/api/products"
-    And I send GET request to "/api/products/1"
+    And I send GET request to "/api/products/{id}"
     Then the response status code should be 200
     And the response should contain the product details
 
@@ -40,7 +40,7 @@ Feature: Product API Testing
     And I have a product with following details:
       | name              | description               | price  |
       | Updated Product   | Updated Description      | 149.99 |
-    And I send PUT request to "/api/products/1"
+    And I send PUT request to "/api/products/{id}"
     Then the response status code should be 200
     And the response should contain the product details
 
@@ -50,6 +50,6 @@ Feature: Product API Testing
       | name           | description                | price  |
       | Delete Product | To be deleted             | 49.99  |
     When I send POST request to "/api/products"
-    And I send DELETE request to "/api/products/1"
+    And I send DELETE request to "/api/products/{id}"
     Then the response status code should be 204
     And the product should not exist
