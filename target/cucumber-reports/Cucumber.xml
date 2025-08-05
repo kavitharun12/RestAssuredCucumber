@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="4.99" tests="5" skipped="0" failures="0" errors="0">
-<testcase classname="Product API Testing" name="Create a new product" time="1.501">
+<testsuite name="Cucumber" time="5.858" tests="5" skipped="0" failures="0" errors="0">
+<testcase classname="Product API Testing" name="Create a new product" time="2.185">
 <system-out><![CDATA[
 Given the API is running at http://localhost:8080...........................passed
 Given I have a product with following details:..............................passed
@@ -9,7 +9,7 @@ Then the response status code should be 201.................................pass
 And the response should contain the product details.........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Product API Testing" name="Get all products" time="0.288">
+<testcase classname="Product API Testing" name="Get all products" time="0.278">
 <system-out><![CDATA[
 Given the API is running at http://localhost:8080...........................passed
 When I send GET request to "/api/products"..................................passed
@@ -17,7 +17,7 @@ Then the response status code should be 200.................................pass
 And the response should contain a list of products..........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Product API Testing" name="Get a specific product" time="0.11">
+<testcase classname="Product API Testing" name="Get a specific product" time="0.112">
 <system-out><![CDATA[
 Given the API is running at http://localhost:8080...........................passed
 Given I have a product with following details:..............................passed
@@ -27,7 +27,7 @@ Then the response status code should be 200.................................pass
 And the response should contain the product details.........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Product API Testing" name="Update a product" time="0.117">
+<testcase classname="Product API Testing" name="Update a product" time="0.165">
 <system-out><![CDATA[
 Given the API is running at http://localhost:8080...........................passed
 Given I have a product with following details:..............................passed
@@ -38,7 +38,7 @@ Then the response status code should be 200.................................pass
 And the response should contain the product details.........................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Product API Testing" name="Delete a product" time="0.118">
+<testcase classname="Product API Testing" name="Delete a product" time="0.152">
 <system-out><![CDATA[
 Given the API is running at http://localhost:8080...........................passed
 Given I have a product with following details:..............................passed
