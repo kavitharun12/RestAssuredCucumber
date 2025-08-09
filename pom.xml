@@ -15,7 +15,7 @@
         <rest-assured.version>5.4.0</rest-assured.version>
         <cucumber.version>7.15.0</cucumber.version>
         <junit.version>5.10.1</junit.version>
-        <slf4j.version>2.0.11</slf4j.version>
+        <slf4j.version>2.0.17</slf4j.version>
     </properties>
 
     <dependencies>
