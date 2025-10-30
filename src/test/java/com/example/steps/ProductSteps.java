@@ -23,7 +23,9 @@ public class ProductSteps {
     @Given("I have a product with following details:")
     public void i_have_a_product_with_following_details(io.cucumber.datatable.DataTable dataTable) {
         var data = dataTable.asMaps().get(0);
+        Long currentId = testProduct != null ? testProduct.getId() : null;
         testProduct = Product.builder()
+                .id(currentId) // preserve the ID if it exists
                 .name(data.get("name"))
                 .description(data.get("description"))
                 .price(Double.parseDouble(data.get("price")))
@@ -31,8 +33,21 @@ public class ProductSteps {
         log.info("Created test product: {}", testProduct);
     }
 
-    @When("I send POST request to {string} with the product details")
-    public void i_send_post_request_to_with_the_product_details(String endpoint) {
+    @Given("the API is running at http:\\/\\/localhost:{int}")
+    public void the_api_is_running_at_http_localhost(Integer port) {
+        String baseUrl = String.format("http://localhost:%d", port);
+        log.info("Checking if API is running at {}", baseUrl);
+        Response healthResponse = given()
+                .spec(requestSpec)
+                .baseUri(baseUrl)
+                .when()
+                .get("/api/products");
+        log.info("Health check response status: {}", healthResponse.getStatusCode());
+        assertEquals(200, healthResponse.getStatusCode(), "API is not running at " + baseUrl);
+    }
+
+    @When("I send POST request to {string}")
+    public void i_send_post_request_to(String endpoint) {
         log.info("Sending POST request to {} with body: {}", endpoint, testProduct);
         response = given()
                 .spec(requestSpec)
@@ -40,10 +55,16 @@ public class ProductSteps {
                 .when()
                 .post(endpoint);
         log.info("Received response with status code: {}", response.getStatusCode());
+        // Extract and store the ID from the response
+        Product created = response.as(Product.class);
+        testProduct.setId(created.getId());
     }
 
     @When("I send GET request to {string}")
     public void i_send_get_request_to(String endpoint) {
+        if (endpoint.contains("{id}")) {
+            endpoint = endpoint.replace("{id}", String.valueOf(testProduct.getId()));
+        }
         log.info("Sending GET request to {}", endpoint);
         response = given()
                 .spec(requestSpec)
@@ -52,8 +73,11 @@ public class ProductSteps {
         log.info("Received response with status code: {}", response.getStatusCode());
     }
 
-    @When("I send PUT request to {string} with updated product details")
-    public void i_send_put_request_to_with_updated_product_details(String endpoint) {
+    @When("I send PUT request to {string}")
+    public void i_send_put_request_to(String endpoint) {
+        if (endpoint.contains("{id}")) {
+            endpoint = endpoint.replace("{id}", String.valueOf(testProduct.getId()));
+        }
         log.info("Sending PUT request to {} with body: {}", endpoint, testProduct);
         response = given()
                 .spec(requestSpec)
@@ -65,6 +89,9 @@ public class ProductSteps {
 
     @When("I send DELETE request to {string}")
     public void i_send_delete_request_to(String endpoint) {
+        if (endpoint.contains("{id}")) {
+            endpoint = endpoint.replace("{id}", String.valueOf(testProduct.getId()));
+        }
         log.info("Sending DELETE request to {}", endpoint);
         response = given()
                 .spec(requestSpec)
